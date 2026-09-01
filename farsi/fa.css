@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IranYekan", sans-serif;
+}
+@font-face {
+  font-family: "IranYekan";
+  src: url("../font/iranyekanwebregula.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  padding: 10px;
+}
+
+/* Main Card */
+.main {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 60px 20px 60px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 650px;
+  width: 90vw;
+  position: relative;
+  border: 4px solid #ffb3c6;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text & Animations */
+.birthday-message {
+  font-size: 2rem;
+  color: #e84393;
+  line-height: 1.7;
+  padding: 15px 0;
+  animation: pop 0.8s ease-out;
+  font-family: "Dancing Script", cursive;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Photo Frames */
+.photo-frame {
+  position: absolute;
+  z-index: 100;
+}
+.photo-frame.top-right {
+  top: -100px;
+  right: -90px;
+  transform: rotate(8deg);
+}
+.photo-frame.bottom-left {
+  bottom: -100px;
+  left: -90px;
+  transform: rotate(-5deg);
+}
+.polaroid {
+  background: white;
+  padding: 10px 10px 28px 10px;
+  border-radius: 4px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: inline-block;
+  border: 3px solid #ffb3c6;
+  max-width: 160px;
+}
+.polaroid:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 15px 35px rgba(255, 107, 129, 0.3);
+}
+.polaroid img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  border: 2px solid #fce4ec;
+}
+.polaroid .caption {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 0.9rem;
+  color: #e84393;
+  margin-top: 6px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.polaroid::before {
+  content: "🌸";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  animation: float 3s ease-in-out infinite;
+}
+.photo-frame.bottom-left .polaroid::before {
+  content: "🌺";
+  left: -10px;
+  right: auto;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Screen Switching */
+.screen {
+  display: block;
+  width: 100%;
+}
+.screen.hidden {
+  display: none !important;
+}
+
+/* Screen 2 styles */
+#screen-feedback h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  color: #e84393;
+}
+#screen-feedback .btns button {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bye {
+  background: #e73c7e;
+  color: white;
+  position: relative;
+}
+.bye:hover {
+  transform: scale(0.95);
+}
+.yes {
+  background: #2ecc71;
+  color: white;
+}
+.yes:hover {
+  transform: scale(1.08);
+  background: #27ae60;
+}
+.no {
+  background: #e74c3c;
+  color: white;
+  position: relative;
+}
+.no:hover {
+  transform: scale(0.95);
+}
+
+/* Arrow Button */
+.next-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  background: #e84393;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.next-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 25px rgba(232, 67, 147, 0.6);
+}
+
+/* Video Screen */
+#screen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  background: #000;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#screen-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    padding: 30px 35px;
+    min-height: 280px;
+    max-width: 500px;
+  }
+  .birthday-message {
+    font-size: 1.6rem;
+  }
+  .photo-frame.top-right {
+    top: -70px;
+    right: -60px;
+  }
+  .photo-frame.bottom-left {
+    bottom: -70px;
+    left: -60px;
+  }
+  .polaroid {
+    max-width: 120px;
+    padding: 8px 8px 20px 8px;
+  }
+  .polaroid img {
+    width: 90px;
+    height: 90px;
+  }
+  .polaroid .caption {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    padding: 20px 20px;
+    min-height: 220px;
+    max-width: 320px;
+    border-radius: 30px 10px 30px 10px;
+  }
+  .birthday-message {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .photo-frame.top-right {
+    top: -45px;
+    right: -35px;
+  }
+  .photo-frame.bottom-left {
+    bottom: -45px;
+    left: -35px;
+  }
+  .polaroid {
+    max-width: 80px;
+    padding: 5px 5px 15px 5px;
+  }
+  .polaroid img {
+    width: 60px;
+    height: 60px;
+  }
+  .polaroid .caption {
+    font-size: 0.55rem;
+    margin-top: 4px;
+  }
+  .polaroid::before {
+    font-size: 1rem;
+    top: -6px;
+    right: -6px;
+  }
+  .photo-frame.bottom-left .polaroid::before {
+    left: -6px;
+  }
+}
+.video-btn {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e84393;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+  z-index: 100; /* same reasoning as before, sits above the video */
+  transition: transform 0.2s;
+}
+.video-btn i {
+  color: #fff;
+}
+.video-btn:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+#screen4 h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.6rem;
+  color: #e84393;
+  line-height: 1.7;
+  padding: 20px;
+}
+#screen4 .bye {
+  font-family: "Dancing Script", cursive;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.bye {
+  background: #e84393;
+  color: white;
+}
+.bye:hover {
+  transform: scale(1.08);
+  background: #d63384;
+}
+#screen-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#screen-out img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+}

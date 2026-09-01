@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  font-family: "Dancing Script", cursive;
+}
+.main {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 60px 20px 60px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 500px;
+  transition: 0.3s;
+  border: 4px solid #ffb3c6;
+}
+h1,
+h3 {
+  color: #ff6b81;
+  margin-bottom: 20px;
+  padding: bottom 20px;
+}
+h1 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.yes {
+  background: #2ecc71;
+  color: white;
+}
+.yes:hover {
+  transform: scale(1.08);
+  background: #27ae60;
+}
+.no {
+  background: #e74c3c;
+  color: white;
+  position: relative;
+}
+.no:hover {
+  transform: scale(0.95);
+}
+.birthday-message {
+  display: none;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #e84393;
+  animation: pop 0.6s ease-out;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Screen transition */
+.screen {
+  display: block;
+  transition: opacity 0.5s ease;
+}
+.screen.hidden {
+  display: none;
+  opacity: 0;
+}
+/* Second screen specific */
+.lang-yes {
+  background: #e74c3c;
+}
+.lang-yes:hover {
+  background: #ff3e28;
+}
+.lang-no {
+  background: #2ecc71;
+}
+.lang-no:hover {
+  transform: scale(0.95);
+}
+
+@media (max-width: 400px) {
+  .main {
+    padding: 25px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+}

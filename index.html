@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday Taraneh! 🎂</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="main">
+      <!-- Screen 1: Ask if Taraneh -->
+      <div id="screen1" class="screen">
+        <h1>🎈 Is this Taraneh? 🎈</h1>
+        <div class="btns">
+          <button class="yes" onclick="goToScreen2()">Yes! 🥳</button>
+          <button
+            class="no"
+            id="noBtn"
+            onclick="moveNo()"
+            onmouseover="moveNo()"
+          >
+            No 😅
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 2: Language choice (hidden initially) -->
+      <div id="screen2" class="screen hidden">
+        <h3>ازون جایی آیلتس 6.5 نداری میتونی زبانو فارسی کنی😅</h3>
+        <div class="btns">
+          <button class="yes lang-yes" onclick="chooseLanguage('fa')">
+            فارسی
+          </button>
+          <button class="no lang-no" onclick="chooseLanguage('en')">
+            English
+          </button>
+        </div>
+      </div>
+
+      <!-- Final birthday message (hidden) -->
+      <div id="finalMessage" class="birthday-message">
+        🎂 Happy Birthday, Taraneh! 🎂<br />
+        You're amazing – enjoy your day! 💖
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

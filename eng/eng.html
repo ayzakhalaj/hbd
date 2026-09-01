@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday Taraneh! 🎂</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
+    <!-- Link to your separated CSS file -->
+    <link rel="stylesheet" href="eng.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- ===== PHOTO FRAMES ===== -->
+      <div class="photo-frame top-right">
+        <div class="polaroid">
+          <img src="../imgs/image1.jpg" alt="Taraneh" />
+          <div class="caption">✨ Taraneh ✨</div>
+        </div>
+      </div>
+      <div class="photo-frame bottom-left">
+        <div class="polaroid">
+          <img src="../imgs/image2.jpg" alt="Taraneh" />
+          <div class="caption">💖 Beautiful soul 💖</div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 1 ===== -->
+      <div id="screen-birthday" class="screen">
+        <div id="finalMessage" class="birthday-message">
+          Happy birthday Taraneh! 🎂<br />
+          I hope you make lots of wonderful memories this year AND turn all your
+          dreams into memories.<br />💖
+        </div>
+        <button class="next-btn" onclick="showFeedback()">→</button>
+      </div>
+
+      <!-- ===== SCREEN 2 ===== -->
+      <div id="screen-feedback" class="screen hidden">
+        <h1>Did you like it?</h1>
+        <div class="btns">
+          <!-- Green Button goes directly to Video -->
+          <button class="yes" onclick="goToVideo()">very muchhh! 🥳</button>
+          <!-- Red Button -->
+          <button class="no" id="noBtn">NOPE 😅</button>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 3 – Video ===== -->
+      <div id="screen-video" class="screen hidden">
+        <video id="birthdayVideo" autoplay muted playsinline loop>
+          <source src="../video/IMG_6183.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="video-btn" onclick="goToGoodbye()">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+      <!-- Screen 4: saying goodbye -->
+      <div id="screen4" class="screen hidden">
+        <h2>
+          I don't know if it's night or day where you are right now. But if it's
+          night, good night; and if it's day, have a great day.
+        </h2>
+        <div class="btns">
+          <button class="bye" id="noBtn" onclick="bye()">
+            Passe une bonne journée
+          </button>
+        </div>
+      </div>
+      <!-- ===== SCREEN 5 – ayza out ===== -->
+      <div id="screen-out" class="screen hidden">
+        <img src="../imgs/me.jpg" alt="" />
+      </div>
+    </div>
+
+    <!-- ===== MUSIC ===== -->
+    <audio id="bgMusic" loop>
+      <source
+        src="../music/Years-Years-Breathe-Chorus-Loop-TikTok-what-s-that-supposed-.m4a"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <!-- CDN Libraries and Local JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="eng1.js"></script>
+  </body>
+</html>
